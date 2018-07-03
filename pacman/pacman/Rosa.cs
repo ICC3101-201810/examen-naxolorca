@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace pacman
 {
+    [Serializable]
     class Rosa:objeto
     {
         public Rosa(int x, int y)

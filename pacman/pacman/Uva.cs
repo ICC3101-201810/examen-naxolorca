@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace pacman
 {
-     class Uva:objeto
+    [Serializable]
+    class Uva:objeto
     {
         public Uva(int x, int y)
         {

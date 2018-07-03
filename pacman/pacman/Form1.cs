@@ -4,13 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pacman
 {
-    
+    [Serializable]
+
     public partial class Form1 : Form
     {
         Graphics juego;
@@ -82,6 +85,17 @@ namespace pacman
 
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //BinaryFormatter formateador = new BinaryFormatter();
+            //Stream miStream = new FileStream("Pacman.bin", FileMode.Create, FileAccess.Write);
+            //formateador.Serialize(miStream, Uandes);
+            //miStream.Close();
+            //MessageBox.Show("Todos los datos modificados han sido guardados con exito.\n Gracias por preferirnos");
+
+        }
+
 
         public void movimiento()
         {

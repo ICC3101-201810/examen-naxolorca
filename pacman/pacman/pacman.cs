@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace pacman
 {
-     public class pacman:objeto
+    [Serializable]
+    public class pacman:objeto
     {
         public pacman(int x, int y)
         {

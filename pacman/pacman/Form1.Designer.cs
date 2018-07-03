@@ -87,13 +87,13 @@
             // uvanoesta
             // 
             this.uvanoesta.Enabled = true;
-            this.uvanoesta.Interval = 3000;
+            this.uvanoesta.Interval = 30000;
             this.uvanoesta.Tick += new System.EventHandler(this.uvanoesta_Tick);
             // 
             // cherrynoesta
             // 
             this.cherrynoesta.Enabled = true;
-            this.cherrynoesta.Interval = 3000;
+            this.cherrynoesta.Interval = 30000;
             this.cherrynoesta.Tick += new System.EventHandler(this.cherrynoesta_Tick);
             // 
             // Form1
@@ -106,6 +106,7 @@
             this.Controls.Add(this.pictureJuego);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureJuego)).EndInit();
             this.ResumeLayout(false);
