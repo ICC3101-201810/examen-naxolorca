@@ -11,8 +11,8 @@ namespace pacman
     {
         public Uva(int x, int y)
         {
-            this.x = generar(20);
-            this.y = generar(20);
+            this.x = -10;
+            this.y = -10;
 
         }
         public void dibujar(Graphics g)

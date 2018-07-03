@@ -24,6 +24,7 @@ namespace pacman
         Boolean ejex = true, ejey = true;
         public Form1()
         {
+            
             int cuadro = 10;
             InitializeComponent();
             juego = pictureJuego.CreateGraphics();
@@ -32,15 +33,52 @@ namespace pacman
             uva = new Uva(100, 100);
             rojo = new Rojo(10, 10);
             rosa = new Rosa(400, 300);
+            cherryesta.Stop();
+            uvaesta.Stop();
             //Bitmap cherry = (Bitmap)Image.FromFile(@"C:\Users\naxol\Desktop\examen-naxolorca\cherry.png", true);
             //Graphics flagGraphics = Graphics.FromImage(cherry);
             ////Bitmap uva = new Bitmap("tile114.png");
-           
-            
+
+
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+
+
+        }
+
+        private void uvanoesta_Tick(object sender, EventArgs e)
+        {
+            uva.colocar();
+            uva.dibujar(juego);
+            uvaesta.Start();
+            uvanoesta.Stop();
+
+        }
+
+        private void cherrynoesta_Tick(object sender, EventArgs e)
+        {
+            cherry.colocar();
+            cherry.dibujar(juego);
+            cherryesta.Start();
+            cherrynoesta.Stop();
+            
+
+        }
+
+        private void cherryesta_Tick(object sender, EventArgs e)
+        {
+            cherry.sacar();
+            cherrynoesta.Start();
+            cherryesta.Stop();
+        }
+
+        private void uvaesta_Tick(object sender, EventArgs e)
+        {
+            uva.sacar();
+            uvanoesta.Start();
+            uvaesta.Stop();
 
 
         }
@@ -50,6 +88,8 @@ namespace pacman
             pac.mover(pac.getX() + xdir, pac.getY() + ydir);
             rojo.seguir(pac.x, pac.y);
             rosa.seguir(pac.x, pac.y);
+            uva.dibujar(juego);
+            cherry.dibujar(juego);
             puntaje.Text = Convert.ToString(puntos);
 
         }
@@ -61,21 +101,24 @@ namespace pacman
             pac.dibujar(juego);
             rojo.dibujar(juego);
             rosa.dibujar(juego);
-            uva.dibujar(juego);
-            cherry.dibujar(juego);
             movimiento();
 
 
             if (pac.choque(cherry))
             {
                 puntos = puntos + 10;
-                cherry.colocar();
+                cherry.sacar();
+                cherrynoesta.Start();
+                cherryesta.Stop();
             }
 
             if (pac.choque(uva))
             {
                 puntos = puntos + 15;
-                uva.colocar();
+                uva.sacar();
+                uvanoesta.Start();
+                uvaesta.Stop();
+
             }
 
         }

@@ -23,5 +23,10 @@ namespace pacman
             else{return false;}
 
         }
+        public void sacar()
+        {
+            this.x = -10;
+            this.y = -10;
+        }
     }
 }

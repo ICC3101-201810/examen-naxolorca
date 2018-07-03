@@ -11,8 +11,8 @@ namespace pacman
     {
         public Guinda(int x, int y)
         {
-            this.x = generar(87);
-            this.y = generar(47);
+            this.x = -10;
+            this.y = -10;
 
         }
         public void dibujar(Graphics g)
@@ -23,8 +23,8 @@ namespace pacman
 
         public void colocar()
         {
-            this.x = generar(87);
-            this.y = generar(47);
+            this.x = generar(80);
+            this.y = generar(20);
         }
 
         public int generar(int n)
@@ -33,5 +33,6 @@ namespace pacman
             int num = random.Next(0, n) * 10;
             return num;
         }
+        
     }
 }
