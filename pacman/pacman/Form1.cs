@@ -124,6 +124,7 @@ namespace pacman
                 cherry.sacar();
                 cherrynoesta.Start();
                 cherryesta.Stop();
+                
             }
 
             if (pac.choque(uva))
@@ -133,6 +134,14 @@ namespace pacman
                 uvanoesta.Start();
                 uvaesta.Stop();
 
+            }
+            if (pac.choque(rosa))
+            {
+                puntos = 0;
+            }
+            if (pac.choque(rojo))
+            {
+                puntos = 0;
             }
 
         }
